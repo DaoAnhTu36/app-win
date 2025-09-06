@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <Compile Update="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\FormCreateCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\FormCreateProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\FormCreateProductAttribute.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\ProductAttribute\FormEditProductAttribute.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\ProductAttribute\FormListProductAttribute.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>

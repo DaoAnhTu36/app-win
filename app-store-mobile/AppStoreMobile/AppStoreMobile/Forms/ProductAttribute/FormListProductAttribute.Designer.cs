@@ -29,22 +29,54 @@
         private void InitializeComponent()
         {
             dgvProductAttribute = new DataGridView();
-            btnCreatePorductAttribute = new Button();
+            id = new DataGridViewTextBoxColumn();
             attribute_name = new DataGridViewTextBoxColumn();
             attribute_value = new DataGridViewTextBoxColumn();
+            is_active = new DataGridViewTextBoxColumn();
+            btnCreatePorductAttribute = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvProductAttribute).BeginInit();
             SuspendLayout();
             // 
             // dgvProductAttribute
             // 
+            dgvProductAttribute.AllowUserToAddRows = false;
+            dgvProductAttribute.AllowUserToDeleteRows = false;
             dgvProductAttribute.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvProductAttribute.Columns.AddRange(new DataGridViewColumn[] { attribute_name, attribute_value });
-            dgvProductAttribute.Dock = DockStyle.Bottom;
+            dgvProductAttribute.Columns.AddRange(new DataGridViewColumn[] { id, attribute_name, attribute_value, is_active });
             dgvProductAttribute.Location = new Point(0, 50);
             dgvProductAttribute.Name = "dgvProductAttribute";
+            dgvProductAttribute.ReadOnly = true;
             dgvProductAttribute.Size = new Size(800, 400);
             dgvProductAttribute.TabIndex = 0;
-            dgvProductAttribute.CellClick += dgvProductAttribute_CellClick;
+            dgvProductAttribute.CellDoubleClick += dgvProductAttribute_CellDoubleClick;
+            // 
+            // id
+            // 
+            id.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            id.HeaderText = "ID";
+            id.Name = "id";
+            id.ReadOnly = true;
+            // 
+            // attribute_name
+            // 
+            attribute_name.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            attribute_name.HeaderText = "Tên thuộc tính";
+            attribute_name.Name = "attribute_name";
+            attribute_name.ReadOnly = true;
+            // 
+            // attribute_value
+            // 
+            attribute_value.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            attribute_value.HeaderText = "Giá trị";
+            attribute_value.Name = "attribute_value";
+            attribute_value.ReadOnly = true;
+            // 
+            // is_active
+            // 
+            is_active.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            is_active.HeaderText = "Trạng thái";
+            is_active.Name = "is_active";
+            is_active.ReadOnly = true;
             // 
             // btnCreatePorductAttribute
             // 
@@ -56,16 +88,6 @@
             btnCreatePorductAttribute.UseVisualStyleBackColor = true;
             btnCreatePorductAttribute.Click += btnCreatePorductAttribute_Click;
             // 
-            // attribute_name
-            // 
-            attribute_name.HeaderText = "Tên thuộc tính";
-            attribute_name.Name = "attribute_name";
-            // 
-            // attribute_value
-            // 
-            attribute_value.HeaderText = "Giá trị";
-            attribute_value.Name = "attribute_value";
-            // 
             // FormListProductAttribute
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -74,6 +96,7 @@
             Controls.Add(btnCreatePorductAttribute);
             Controls.Add(dgvProductAttribute);
             Name = "FormListProductAttribute";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "Danh sách thuộc tính sản phẩm";
             Load += FormListProductAttribute_Load;
             ((System.ComponentModel.ISupportInitialize)dgvProductAttribute).EndInit();
@@ -84,7 +107,9 @@
 
         private DataGridView dgvProductAttribute;
         private Button btnCreatePorductAttribute;
+        private DataGridViewTextBoxColumn id;
         private DataGridViewTextBoxColumn attribute_name;
         private DataGridViewTextBoxColumn attribute_value;
+        private DataGridViewTextBoxColumn is_active;
     }
 }

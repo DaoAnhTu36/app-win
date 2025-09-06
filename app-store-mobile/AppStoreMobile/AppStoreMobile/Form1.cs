@@ -25,6 +25,7 @@ namespace AppStoreMobile
         private void itemMenuThuocTinh_Click(object sender, EventArgs e)
         {
             var formListProductAttribute = new FormListProductAttribute(_options);
+            formListProductAttribute.MdiParent = this;
             formListProductAttribute.Show();
         }
 
@@ -35,12 +36,14 @@ namespace AppStoreMobile
         private void subItemMenuDanhMucThemMoi_Click(object sender, EventArgs e)
         {
             var formCreateCategory = new FormCreateCategory(_options);
+            formCreateCategory.MdiParent = this;
             formCreateCategory.Show();
         }
 
         private void subItemMenuThuocTinhThemMoi_Click(object sender, EventArgs e)
         {
             var formCreateProductAttribute = new FormCreateProductAttribute(_options);
+            formCreateProductAttribute.MdiParent = this;
             formCreateProductAttribute.Show();
         }
     }

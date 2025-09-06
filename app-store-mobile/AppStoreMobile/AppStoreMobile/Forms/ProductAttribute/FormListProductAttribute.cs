@@ -1,5 +1,7 @@
 ﻿using AppStoreMobile.DatabaseContext;
+using AppStoreMobile.Forms.ProductAttribute;
 using Microsoft.EntityFrameworkCore;
+using System.Windows.Forms;
 
 namespace AppStoreMobile.Forms
 {
@@ -26,29 +28,21 @@ namespace AppStoreMobile.Forms
             var data = db.ProductAttributeEntity.ToList();
             foreach (var item in data)
             {
-                dgvProductAttribute.Rows.Add(item.AttributeName, item.AttributeValue);
+                dgvProductAttribute.Rows.Add(item.Id, item.AttributeName, item.AttributeValue, item.IsActive);
             }
-
-            //dgvProductAttribute.DataSource = data;
         }
 
-        private void dgvProductAttribute_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvProductAttribute_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dgvProductAttribute.Rows[e.RowIndex];
-                string name = row.Cells["Name"].Value?.ToString();
-                MessageBox.Show("Bạn vừa click vào: " + name);
-            }
-        }
-
-        private void dgvProductAttribute_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow row = dgvProductAttribute.Rows[e.RowIndex];
-                string name = row.Cells["attribute_name"].Value?.ToString();
-                MessageBox.Show("Bạn vừa click vào: " + name);
+                var id = int.Parse(row.Cells["id"].Value.ToString());
+                var attributeName = row.Cells["attribute_name"].Value.ToString();
+                var attributeValue = row.Cells["attribute_value"].Value.ToString();
+                var isActive = bool.Parse(row.Cells["is_active"].Value.ToString());
+                FormEditProductAttribute formEditProductAttribute = new(_options, id, attributeName, attributeValue, isActive);
+                formEditProductAttribute.ShowDialog();
             }
         }
     }

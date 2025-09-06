@@ -89,7 +89,7 @@
             Controls.Add(label1);
             Name = "FormCreateProductAttribute";
             StartPosition = FormStartPosition.CenterParent;
-            Text = "FormCreateProductAttribute";
+            Text = "Thêm mới thuộc tính";
             ResumeLayout(false);
             PerformLayout();
         }

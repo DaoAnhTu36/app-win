@@ -73,28 +73,28 @@
             // itemMenuDanhMuc
             // 
             itemMenuDanhMuc.Name = "itemMenuDanhMuc";
-            itemMenuDanhMuc.Size = new Size(180, 24);
+            itemMenuDanhMuc.Size = new Size(147, 24);
             itemMenuDanhMuc.Text = "Danh mục";
             itemMenuDanhMuc.Click += itemMenuDanhMuc_Click;
             // 
             // itemMenuSanPham
             // 
             itemMenuSanPham.Name = "itemMenuSanPham";
-            itemMenuSanPham.Size = new Size(180, 24);
+            itemMenuSanPham.Size = new Size(147, 24);
             itemMenuSanPham.Text = "Sản phẩm";
             itemMenuSanPham.Click += itemMenuSanPham_Click;
             // 
             // itemMenuThuocTinh
             // 
             itemMenuThuocTinh.Name = "itemMenuThuocTinh";
-            itemMenuThuocTinh.Size = new Size(180, 24);
+            itemMenuThuocTinh.Size = new Size(147, 24);
             itemMenuThuocTinh.Text = "Thuộc tính";
             itemMenuThuocTinh.Click += itemMenuThuocTinh_Click;
             // 
             // itemMenuHinhAnh
             // 
             itemMenuHinhAnh.Name = "itemMenuHinhAnh";
-            itemMenuHinhAnh.Size = new Size(180, 24);
+            itemMenuHinhAnh.Size = new Size(147, 24);
             itemMenuHinhAnh.Text = "Hình ảnh";
             itemMenuHinhAnh.Click += itemMenuHinhAnh_Click;
             // 
@@ -206,8 +206,10 @@
             Controls.Add(menuStripMain);
             Font = new Font("Segoe UI", 11F);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            IsMdiContainer = true;
             MainMenuStrip = menuStripMain;
             Name = "Form1";
+            StartPosition = FormStartPosition.Manual;
             Text = "Peatun Store";
             menuStripMain.ResumeLayout(false);
             menuStripMain.PerformLayout();

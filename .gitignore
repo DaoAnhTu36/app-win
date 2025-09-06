@@ -1,3 +1,4 @@
 *.sln
 app-store-mobile/AppStoreMobile/AppStoreMobile/obj/
 app-store-mobile/AppStoreMobile/AppStoreMobile/bin/
+app-store-mobile/AppStoreMobile/AppStoreMobile/.vs/
